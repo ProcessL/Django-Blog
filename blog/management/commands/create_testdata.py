@@ -18,6 +18,8 @@ class Command(BaseCommand):
         category = Category.objects.get_or_create(
             name='子类目', parent_category=pcategory)[0]
 
+        # category.save()
+
         category.save()
         basetag = Tag()
         basetag.name = "标签"

@@ -1,11 +1,10 @@
-from django.conf import settings
 from django.test import Client, RequestFactory, TestCase
 from django.urls import reverse
 from django.utils import timezone
 
-from djangoblog.utils import *
 from accounts.models import BlogUser
 from blog.models import Article, Category
+from djangoblog.utils import *
 from . import utils
 
 

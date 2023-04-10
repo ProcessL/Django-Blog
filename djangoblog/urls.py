@@ -52,7 +52,6 @@ urlpatterns = [
                   re_path('^search', search_view_factory(view_class=EsSearchView, form_class=ElasticSearchModelSearchForm),
                           name='search'),
                   re_path(r'', include('servermanager.urls', namespace='servermanager')),
-                  re_path(r'', include('owntracks.urls', namespace='owntracks'))
               ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

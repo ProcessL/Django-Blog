@@ -1,5 +1,6 @@
 {% load blog_tags %}
 <div id="secondary" class="widget-area" role="complementary">
+
     <aside id="search-2" class="widget widget_search">
         <form role="search" method="get" id="searchform" class="searchform" action="/search">
             <div>
@@ -8,6 +9,18 @@
                 <input type="submit" id="searchsubmit" value="搜索"/>
             </div>
         </form>
+    </aside>
+    <aside id="meta-3" class="widget widget_meta"><p class="widget-title">功能</p>
+        <ul>
+            <li><a href="/admin/" rel="nofollow">管理站点</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url "account:logout" %}" rel="nofollow">登出</a>
+                </li>
+
+            {% else %}
+                <li><a href="{% url "account:login" %}" rel="nofollow">登录</a></li>
+            {% endif %}
+        </ul>
     </aside>
     {% if extra_sidebars %}
         {% for sidebar in extra_sidebars %}
@@ -113,23 +126,6 @@
                     src="https://resource.lylinux.net/img.shields.io/github/forks/liangliangyy/djangoblog.svg?style=social&amp;label=Fork"
                     alt="GitHub forks"></a></p>
         </div>
-    </aside>
-
-    <aside id="meta-3" class="widget widget_meta"><p class="widget-title">功能</p>
-        <ul>
-            <li><a href="/admin/" rel="nofollow">管理站点</a></li>
-            {% if user.is_authenticated %}
-                <li><a href="{% url "account:logout" %}" rel="nofollow">登出</a>
-                </li>
-
-            {% else %}
-                <li><a href="{% url "account:login" %}" rel="nofollow">登录</a></li>
-            {% endif %}
-            {% if user.is_superuser %}
-                <li><a href="{% url 'owntracks:show_dates' %}" target="_blank">运动轨迹记录</a></li>
-            {% endif %}
-            <li><a href="http://gitbook.lylinux.net" target="_blank" rel="nofollow">GitBook</a></li>
-        </ul>
     </aside>
 
     <div id="rocket" class="show" title="点我返回顶部"></div>

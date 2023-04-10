@@ -331,7 +331,7 @@ class BlogSettings(models.Model):
         default='')
     analyticscode = models.TextField(
         "网站统计代码",
-        max_length=1000,
+        max_length=10000,
         null=False,
         blank=False,
         default='')

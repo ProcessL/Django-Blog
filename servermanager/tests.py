@@ -2,9 +2,9 @@ from django.test import Client, RequestFactory, TestCase
 from django.utils import timezone
 from werobot.messages.messages import TextMessage
 
-from djangoblog.utils import get_current_site
 from accounts.models import BlogUser
 from blog.models import Category, Article
+from djangoblog.utils import get_current_site
 from servermanager.api.commonapi import TuLing
 from .models import commands
 from .robot import MessageHandler, CommandHandler
